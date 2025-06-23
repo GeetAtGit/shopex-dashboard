@@ -1,0 +1,104 @@
+/* ────────────────────────────────────────────────────────────────────────── */
+/* 1. Pull in ALL of Tailwind v4 (base, components, utilities) in one go       */
+@import "tailwindcss";
+/* in index.css or a dedicated styles import */
+
+
+/* 2. Define your custom dark-mode variant so that all `dark:…` utilities work
+      whenever a parent has the `.dark` class (or on the element itself)      */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* 3. Your CSS variables for light mode                                        */
+:root {
+  --color-bg:          #FFFDF6;  /* light peach background */
+  --color-fg:          #FAF6E9;  /* darkest light-mode hue for text */
+  --color-primary:     #371d62;  /* periwinkle accent */
+  --color-secondary:   #5716a7;  /* lighter periwinkle */
+  --transition-speed:  0.3s;
+}
+
+/* Override for Dark mode (toggle via adding `.dark` on <html> or a wrapper) */
+.dark {
+  --color-bg:        #121212;   /* true charcoal */
+  /* make your text much lighter */
+  --color-fg:        #EEEEEE;   /* near‐white for text */
+  /* primary/secondary accents can stay light but deeper */
+  --color-primary:   #6a4cae;   /* light blue accent */
+  --color-secondary: #e5dddf;   /* pink accent */
+}
+
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* 5. Global background, text, and transition settings                        */
+html, body {
+  background-color: var(--color-bg);
+  color:            var(--color-primary);
+  transition: background-color var(--transition-speed),
+              color var(--transition-speed);
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* 6. Example reusable button component using your custom palette            */
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-semibold transition-colors;
+    background-color: var(--color-primary);
+    color:            var(--color-bg);
+  }
+  .btn:hover {
+    background-color: var(--color-secondary);
+  }
+}
+
+/* in src/index.css */
+
+/* Override Syncfusion sidebar wrapper */
+.custom-sidebar.e-sidebar {
+  background-color: transparent !important;
+  box-shadow: none          !important;  /* removes any default shadow */
+}
+
+/* Override the inner content panel (if you’re seeing white there) */
+.custom-sidebar.e-sidebar .e-sidebar-content {
+  background-color: transparent !important;
+}
+
+.main-content {
+  /* match your sidebar transition duration */
+  transition: transform var(--transition-speed) ease-in-out;
+}
+
+@layer base {
+  .e-dock.e-close span.e-text { @apply hidden; }
+  .e-dock.e-open  span.e-text { @apply inline-block; }
+}
+@layer components {
+  /* 1️⃣ The outer wrapper that centers the chart card */
+  .chart-wrapper {
+    @apply flex justify-center p-6 transition-colors;
+    background-color: var(--color-bg);
+    color:            var(--color-fg);
+  }
+
+  /* 2️⃣ The card itself, with a max-width so it never blows out */
+  .chart-card {
+    @apply w-full max-w-4xl rounded-lg shadow p-6 transition-colors;
+    background-color: var(--color-bg);
+  }
+
+  /* 3️⃣ The title, using your primary/secondary vars */
+  .chart-title {
+    @apply text-2xl font-semibold mb-4;
+    color: var(--color-primary);
+  }
+  .dark .chart-title {
+    color: var(--color-secondary);
+  }
+}
+
+/* make the inner panel fill its container and scroll */
+.e-sidebar .e-sidebar-content {
+  height: 100% !important;
+  overflow-y: auto   !important;
+}
