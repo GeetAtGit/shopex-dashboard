@@ -1,12 +1,57 @@
-# React + Vite
+# ✨ShopEx Dashboard 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive admin dashboard for ShopEx – a fictional e-commerce management platform. Track everything—from overall metrics to granular details—through one intuitive interface.  
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [https://shopex-dashboard.netlify.app](https://shopex-dashboard.netlify.app) 🚀
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🔍 About
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ShopEx Dashboard is a React-based admin panel built with Tailwind CSS and Syncfusion components. It gives you:
+
+- 🏠 **Dashboard Overview** – High-level KPIs and trends at a glance  
+- 📅 **Calendar** – Schedule and track events or promotions  
+- 🗂️ **Kanban Board** – Manage workflows and tasks visually  
+- 📋 **Data Tables** – Editable grids for users, orders, products  
+- 📊 **Charts & Graphs** – Sales, traffic, and inventory insights  
+- 🌗 **Dark & Light Mode** – Switch themes to suit your mood  
+
+---
+
+## ✨ Features
+
+- 🎯 **Responsive Design** – Desktop, tablet, and mobile friendly  
+- 🖤🤍 **Theme Toggle** – Dark mode & light mode with one click  
+- 🏠 **Dashboard Page** – Overview of sales, users, and key stats  
+- 📅 **Calendar Module** – Add, edit, and view scheduled events  
+- 🗂️ **Kanban Module** – Drag-and-drop custom task boards  
+- 📋 **Editable Tables** – Inline editing, sorting, filtering, pagination  
+- 📊 **Interactive Charts** – Bar, line, pie charts for real-time data  
+- 🔔 **Notifications** – Toasts and badges for instant alerts  
+
+---
+
+## 🛠️ Tech Stack
+
+- **🌐 Frontend:** React, Tailwind CSS  
+- **🔧 UI Components:** Syncfusion React Grid, Charts, Scheduler, Kanban  
+- **🛣️ Routing:** React Router  
+- **🔄 State:** React Context API  
+- **☁️ Deployment:** Netlify  
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- 🖥️ Node.js (>= 14.x) & npm or Yarn  
+- 🔗 Git  
+
+### Installation
+
+1. **Clone the repo:**  
+   ```bash
+   git clone https://github.com/geetatgit/shopex-dashboard.git
+   cd shopex-dashboard
